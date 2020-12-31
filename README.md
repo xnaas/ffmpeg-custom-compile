@@ -76,3 +76,9 @@ Script had actually been broken for some time...this fixes everything that was w
 * fixed `compileLibx265()` section by removing depth from `git clone`
 * changed `--enable-openssl` to `--enable-gnutls` as the former didn't actually work with `--enable-gpl`...
 * added `--enable-libwebp` **which only works if the host has previously compiled `libwebp` for their system**...will work later to add this to script — consider removing this line if it's not needed
+
+# Update 2020-12-31
+
+**v9.22**:
+* Minor text fix
+* Removed `--enable-libwebp` as it's super optional
