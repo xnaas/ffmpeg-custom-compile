@@ -7,7 +7,7 @@
 ## non-free stuffs.    ##
 ##                     ##
 ##      Author: xnaas  ##
-##      Version: v9.22 ##
+##      Version: v9.23 ##
 #########################
 ## For troubleshooting ##
 ## just remove all     ##
@@ -33,8 +33,7 @@ yes | sudo apt-get remove -qq \
 
 ## Install Prerequisites
 installLibs(){
-# yes | sudo apt-get update -qq && sudo apt-get upgrade -qq && sudo apt-get install -qq \
-yes | sudo apt-get install -qq \
+yes | sudo apt-get update -qq && sudo apt-get upgrade -qq && sudo apt-get install -qq \
   autoconf \
   automake \
   build-essential \
