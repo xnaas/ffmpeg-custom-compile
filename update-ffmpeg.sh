@@ -162,7 +162,7 @@ rm -rf ~/ffmpeg_build
 profileAdd(){
 echo "Adding ffmpeg to profile path..."
 echo "If this doesn't work, re-source your profile."
-source ~/.profile
+. ~/.profile
 }
 
 ## The Process
