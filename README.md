@@ -1,6 +1,6 @@
 # ffmpeg-custom-compile
 
-This is my custom ffmpeg compilation script. Imported from [GitLab Snippet](https://gitlab.com/snippets/1732779).
+This is my custom ffmpeg compilation script. It installs some non-free software and compiles many things from their latest/stable source.
 
 ## [update-ffmpeg.sh](https://github.com/xnaas/ffmpeg-custom-compile/blob/master/update-ffmpeg.sh)
 
