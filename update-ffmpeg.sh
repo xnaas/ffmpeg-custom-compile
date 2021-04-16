@@ -7,7 +7,7 @@
 ## non-free stuffs.    ##
 ##                     ##
 ##      Author: xnaas  ##
-##      Version: v9.23 ##
+##      Version: v10.0 ##
 #########################
 ## For troubleshooting ##
 ## just remove all     ##
@@ -121,6 +121,17 @@ make -j$(nproc) && \
 make -j$(nproc) install
 }
 
+## Compile zimg
+compileLibZimg(){
+cd ~/ffmpeg_sources && \
+git -C zimg pull 2> /dev/null || git clone -b release-3.0.1 https://github.com/sekrit-twc/zimg.git && \
+cd zimg && \
+./autogen.sh && \
+./configure --prefix="$HOME/ffmpeg_build" --disable-shared && \
+make -j$(nproc) && \
+make -j$(nproc) install
+}
+
 ## Compile ffmpeg
 compileFfmpeg(){
 cd ~/ffmpeg_sources && \
@@ -145,6 +156,7 @@ PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./conf
   --enable-libvpx \
   --enable-libx264 \
   --enable-libx265 \
+  --enable-libzimg \
   --enable-nonfree && \
 PATH="$HOME/bin:$PATH" make -j$(nproc) && \
 make -j$(nproc) install && \
@@ -186,6 +198,8 @@ echo "Installing libfdk-aac..."
 compileLibfdkaac &> /dev/null
 echo "Installing libopus..."
 compileLibOpus &> /dev/null
+echo "Installing libzimg..."
+compileLibZimg &> /dev/null
 echo "Compiling ffmpeg...buckle up!"
 compileFfmpeg &> /dev/null
 cleanupNew
